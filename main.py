@@ -29,3 +29,62 @@
 # Vārdnīcas - https://www.w3schools.com/python/python_dictionaries.asp
 # Klonēt repozitoriju - hhttps://code.visualstudio.com/docs/sourcecontrol/intro-to-git
 #
+
+
+import json
+
+produkts = []
+
+with open('check.json') as openfile:
+    produkts = json.load(openfile)
+
+
+while True:
+    print("Kases aparāts")
+    print("---------------------")
+    print("1. Pievienot Produktu")
+    print("2. Dzēst Prece")
+    print("3. Noņemiet pirmo elementu sarakstā")
+    print("4. Check")
+    print("5 Print visas produkrus ar summu")
+    print("6. Exit")
+    choice = input("Enter your choice (1-6)")
+
+    if choice == '1':
+        produkta = input("pievienot produktu nosaukums: ")
+        produkta_cena = input("pievienot produktu cenu (1-9999) ")
+
+
+    pass
+
+    if choice == '2':
+        dzest = input("Ievadi prece: ")
+        produkts.pop(dzest)
+        print("Produkts noņemts")
+    pass
+
+    if choice == '3':
+        Dzēst_visi =  input("Vai tiešām vēlaties dzēst sarakstu?(Jā/Ne)")
+        if Dzēst_visi == "Jā":
+            produkts.pop(0)
+            print("Sarakts dzēst")
+        if Dzēst_visi == "Ne":
+            print("Saraksts nav dzēsts")
+    pass
+    if choice == '4':
+        print("-------Check-------")
+        print("-------------------")
+        print()
+        print()
+        print()
+        print()
+        print("-------------------")
+    pass
+
+    if choice == "5":
+        print(produkts)
+    if choice == '6':
+        print("Exiting")
+        break
+
+        
