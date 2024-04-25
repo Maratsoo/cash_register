@@ -54,7 +54,17 @@ while True:
         produkta = input("pievienot produktu nosaukums: ")
         produkta_cena = input("pievienot produktu cenu (1-9999) ")
 
+        if len(produkta) < 2 or len (produkta) > 120:
+            print ("Nosaukums neder")
+        pass
+        produkta_cena = float(produkta_cena)
+        if produkta_cena < 0 or produkta_cena > 9999:
+            print ("cena neder")
+        pass
+        produkta_cena = round (produkta_cena,2)
 
+        produkts.append({"nosaukums": produkta,"cena":produkta_cena})
+        print ("Produkts pievienots")
     pass
 
     if choice == '2':
@@ -73,12 +83,18 @@ while True:
     pass
     if choice == '4':
         print("-------Check-------")
-        print("-------------------")
-        print()
-        print()
-        print()
-        print()
-        print("-------------------")
+        total_sum = 0
+        for produkts in produkts:
+            nosaukums = produkts["nosaukums"]
+            cena = produkts ["cena"]
+            print(f"{nosaukums}: {"cena"}")
+            total_sum += cena
+
+            atlaides_proc = 10
+            aatlaides_sum = total_sum*(atlaides_proc/100)
+            print (f"atlaide summa:{aatlaides_sum}")
+            kopsumma = total_sum-aatlaides_sum
+            print (f"Summa:{kopsumma}")
     pass
 
     if choice == "5":
