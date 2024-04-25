@@ -68,13 +68,13 @@ while True:
     pass
 
     if choice == '2':
-        dzest = input("Ievadi prece: ")
+        dzest = float("Ievadi prece: ")
         produkts.pop(dzest)
         print("Produkts noņemts")
     pass
 
     if choice == '3':
-        Dzēst_visi =  input("Vai tiešām vēlaties dzēst sarakstu?(Jā/Ne)")
+        Dzēst_visi =  float("Vai tiešām vēlaties dzēst sarakstu?(Jā/Ne)")
         if Dzēst_visi == "Jā":
             produkts.pop(0)
             print("Sarakts dzēst")
